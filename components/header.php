@@ -1230,9 +1230,10 @@
                                         </li>
                                         <li>
                                             <a href="addCategory.php" >
-                                                <i class="metismenu-icon"></i>Add Cayegory
+                                                <i class="metismenu-icon"></i>Add Category
                                             </a>
                                         </li>
+                                        
                                         <li>
                                             <a href="pages-register.html" >
                                                 <i class="metismenu-icon"></i>Register
@@ -1249,8 +1250,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="pages-forgot-password-boxed.html" >
-                                                <i class="metismenu-icon"></i>Forgot Password Boxed
+                                            <a href="addProduct.php" >
+                                                <i class="metismenu-icon"></i>Add Product
                                             </a>
                                         </li>
                                     </ul>
@@ -1645,3 +1646,5 @@
                             </ul>
                         </div>
                     </div>
+</div>
+</div>

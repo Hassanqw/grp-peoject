@@ -2,7 +2,14 @@
 include("php/query.php");
 include("components/header.php"); 
 ?>
-</div><div class="app-main__outer">
+<style>
+
+    .container{
+        width: 700px;
+    }
+</style>
+<div class="container">
+<div class="app-main__outer">
     <div class="app-main__inner">
         <div class="app-page-title">
             <div class="page-title-wrapper">
@@ -55,5 +62,5 @@ include("components/header.php");
                 </div>
             </div>
         </div>
-
+</div>
 <?php include("components/footer.php"); ?>

@@ -7,6 +7,7 @@ include("components/header.php");
 
     .container{
         width: 700px;
+        margin-top:  -500px ; 
     }
 </style>
 
@@ -28,33 +29,33 @@ include("components/header.php");
 
 
 
-    <!-- Product ID -->
+    <!-- Product ID
     <div class="mb-3">
         <label for="productId" class="form-label fw-bold">Product ID</label>
         <input type="text" class="form-control" id="productId" name="product_id" placeholder="Enter 10-digit product ID">
         <small class="text-danger"><?php echo $productIdErr ?></small>
-    </div>
+    </div> -->
 
-    <!-- Product Code -->
+    <!-- Product Code
     <div class="mb-3">
         <label for="productCode" class="form-label fw-bold">Product Code</label>
-        <input type="text" class="form-control" id="productCode" name="product_code" placeholder="Enter product code">
+        <input type="text" class="form-control" id="productCode" value="<?php echo $productCode ?>" name="product_code" placeholder="Enter product code">
         <small class="text-danger"><?php echo $productCodeErr ?></small>
-    </div>
+    </div> -->
 
-    <!-- Revision No -->
+    <!-- Revision No
     <div class="mb-3">
         <label for="revisionNo" class="form-label fw-bold">Revision No</label>
-        <input type="text" class="form-control" id="revisionNo" name="revision_no" placeholder="e.g. R1">
+        <input type="text" class="form-control" value="<?php echo $revisionNo  ?>" id="revisionNo" name="revision_no" placeholder="e.g. R1">
         <small class="text-danger"><?php echo $revisionNoErr ?></small>
-    </div>
+    </div> -->
 
-    <!-- Manufacture No -->
+    <!-- Manufacture No
     <div class="mb-3">
         <label for="manufactureNo" class="form-label fw-bold">Manufacture No</label>
-        <input type="text" class="form-control" id="manufactureNo" name="manufacture_no" placeholder="e.g. MF001">
+        <input type="text" class="form-control" value="<?php echo $manufactureNo   ?>" id="manufactureNo" name="manufacture_no" placeholder="e.g. MF001">
         <small class="text-danger"><?php echo $manufactureNoErr ?></small>
-    </div>
+    </div> -->
 
 <select name="category_id" id="" class="form-control">
     <option value=""> Select Category</option>

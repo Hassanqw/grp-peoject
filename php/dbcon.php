@@ -1,5 +1,5 @@
 <?php
-$server = "mysql:host=localhost;dbname=e-project";
+$server = "mysql:host=localhost;dbname=eproject";
 $user = "root";
 $pass = "" ;
 $pdo = new PDO($server , $user , $pass) ;

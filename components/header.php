@@ -1132,7 +1132,7 @@
                     </div>
                 </div>
             </div>
-        </div>        <div class="app-main">
+        </div>        < class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
                         <div class="logo-src"></div>
@@ -1233,7 +1233,41 @@
                                                 <i class="metismenu-icon"></i>Add Category
                                             </a>
                                         </li>
-                                        
+                                        <li>
+                                            <a href="add_product_types.php" >
+                                                <i class="metismenu-icon"></i>Add Product Type
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="testing_types.php" >
+                                                <i class="metismenu-icon"></i>Testing Types
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="add_lab_test.php" >
+                                                <i class="metismenu-icon"></i>Add Lab Test
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="add_tester.php" >
+                                                <i class="metismenu-icon"></i>Add Tester
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="addProduct.php" >
+                                                <i class="metismenu-icon"></i>Add Product
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="add_department.php" >
+                                                <i class="metismenu-icon"></i>Add Department
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="add_cpri_test.php" >
+                                                <i class="metismenu-icon"></i>Add CPRI Test
+                                            </a>
+                                        </li>
                                         <li>
                                             <a href="pages-register.html" >
                                                 <i class="metismenu-icon"></i>Register
@@ -1250,8 +1284,8 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="addProduct.php" >
-                                                <i class="metismenu-icon"></i>Add Product
+                                            <a href="pages-forgot-password-boxed.html" >
+                                                <i class="metismenu-icon"></i>Forgot Password Boxed
                                             </a>
                                         </li>
                                     </ul>
@@ -1648,3 +1682,7 @@
                     </div>
 </div>
 </div>
+</div>
+
+
+

@@ -4,9 +4,12 @@ include("components/header.php");
 ?>
 <style>
 
+
     .container{
         width: 700px;
+        margin-top:  -500px ; 
     }
+
 </style>
 <div class="container">
 <div class="app-main__outer">

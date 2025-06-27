@@ -4,7 +4,6 @@ include("components/header.php");
 ?>
 
 <style>
-
     .container{
         width: 700px;
         margin-top:  -500px ; 
@@ -41,10 +40,9 @@ include("components/header.php");
                 ?>
             </select>
         </div>
-
-        <button type="submit" name="addTester" class="btn btn-primary w-100">Add Tester</button>
+        <button name="addTester" class="btn btn-primary w-100">Add Tester</button>
     </form>
 </div>
 </div>
-
-<?php include("components/footer.php"); ?>
+<?php include("components/footer.php"); 
+?>

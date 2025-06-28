@@ -1,60 +1,7 @@
 <?php 
 include("php/dbcon.php");
-                                  //ADD PRODUCT:
-if (isset($_POST['addproduct'])) {
-    $productName = $_POST['pName'];
-    $productImageName = strtolower($_FILES['pImage']['name']);
-    $productImageTmpName = $_FILES['pImage']['tmp_name'];
-    $category_id = $_POST['category_id'];
-    $createdAt = $_POST['created_at'];
 
-    $extension = pathinfo($productImageName, PATHINFO_EXTENSION);
-    $destination = "images/" . $productImageName;
 
-    // Validation
-    $errors = [];
-
-    if (empty($productName)) $errors[] = "Product Name is required.";
-    if (empty($productImageName)) $errors[] = "Product Image is required.";
-    if (!in_array($extension, ['jpg', 'png', 'jpeg', 'svg'])) $errors[] = "Invalid file extension.";
-    if (empty($category_id)) $errors[] = "Category is required.";
-    if (empty($createdAt)) $errors[] = "Created Date is required.";
-
-    if (empty($errors)) {
-        if (move_uploaded_file($productImageTmpName, $destination)) {
-            // Auto-generate fields
-            $product_id = str_pad(mt_rand(1, 9999999999), 10, '0', STR_PAD_LEFT); // 10-digit
-            $product_code = strtoupper(substr(uniqid('P'), -6)); // random code like 'P8F4D2'
-            $revision_no = 'R' . rand(1, 9); // e.g., R1
-            $manufacture_no = 'MF' . str_pad(rand(1, 999), 3, '0', STR_PAD_LEFT); // MF001
-
-            $stmt = $pdo->prepare("INSERT INTO addproduct 
-                (product_name, product_image, product_id, product_code, revision_no, manufacture_no, category_id, created_at) 
-                VALUES 
-                (:product_name, :product_image, :product_id, :product_code, :revision_no, :manufacture_no, :category_id, :created_at)");
-
-            $stmt->execute([
-                ':product_name'     => $productName,
-                ':product_image'    => $productImageName,
-                ':product_id'       => $product_id,
-                ':product_code'     => $product_code,
-                ':revision_no'      => $revision_no,
-                ':manufacture_no'   => $manufacture_no,
-                ':category_id'      => $category_id,
-                ':created_at'       => $createdAt
-            ]);
-
-            echo "<script>alert('✅ Product Added'); location.href='addProduct.php';</script>";
-        } else {
-            echo "<script>alert('❌ File Upload Failed');</script>";
-        }
-    } else {
-        foreach ($errors as $e) {
-            echo "<script>alert('$e');</script>";
-        }
-    }
-}
-                                           
                                            // Add Category Logic
 $categoryName = $categoryImageName = $categoryDes = "";
 $categoryNameErr = $categoryImageNameErr = $categoryDesErr = "";
@@ -124,31 +71,31 @@ if (isset($_POST["addproductType"])) {
 }
                                //TESTING TYPES:
 
-include("php/dbcon.php"); // your PDO connection
-$testName = $departmentId = "";
-$testNameErr = $departmentIdErr = "";
+// your PDO connection
+// $testName = $departmentId = "";
+// $testNameErr = $departmentIdErr = "";
 
-if (isset($_POST['addTestingType'])) {
-    $testName = $_POST['test_name'];
-    $departmentId = $_POST['department_id'];
+// if (isset($_POST['addTestingType'])) {
+//     $testName = $_POST['test_name'];
+//     $departmentId = $_POST['department_id'];
 
-    if (empty($testName)) {
-        $testNameErr = "Testing Name is required";
-    }
+//     if (empty($testName)) {
+//         $testNameErr = "Testing Name is required";
+//     }
 
-    if (empty($departmentId)) {
-        $departmentIdErr = "Department ID is required";
-    }
+//     if (empty($departmentId)) {
+//         $departmentIdErr = "Department ID is required";
+//     }
 
-    if (empty($testNameErr) && empty($departmentIdErr)) {
-        $stmt = $pdo->prepare("INSERT INTO testing_types (test_name, department_id) VALUES (:test_name, :department_id)");
-        $stmt->bindParam(":test_name", $testName);
-        $stmt->bindParam(":department_id", $departmentId);
-        $stmt->execute();
+//     if (empty($testNameErr) && empty($departmentIdErr)) {
+//         $stmt = $pdo->prepare("INSERT INTO testing_types (test_name, department_id) VALUES (:test_name, :department_id)");
+//         $stmt->bindParam(":test_name", $testName);
+//         $stmt->bindParam(":department_id", $departmentId);
+//         $stmt->execute();
 
-        echo "<script>alert('Testing Type Added Successfully'); location.assign('testing_type.php');</script>";
-    }
-}
+//         echo "<script>alert('Testing Type Added Successfully'); location.assign('testing_type.php');</script>";
+//     }
+// }
 
 
                                         //Add Lab Test:
@@ -203,7 +150,7 @@ if (isset($_POST['addTester'])) {
     $departmentId = $_POST['department_id'];
 
     if (!empty($testerName) && !empty($email) && !empty($departmentId)) {
-        $stmt = $pdo->prepare("INSERT INTO testers (tester_name, email, department_id) VALUES (:tester_name, :email, :department_id)");
+        $stmt = $pdo->prepare("INSERT INTO testers (name, email, department_id) VALUES (:tester_name, :email, :department_id)");
         $stmt->execute([
             ':tester_name' => $testerName,
             ':email' => $email,
@@ -222,9 +169,9 @@ if (isset($_POST['addDepartment'])) {
     $location = $_POST['location'];
 
     if (!empty($departmentName) && !empty($location)) {
-        $stmt = $pdo->prepare("INSERT INTO departments (department_name, location) VALUES (:department_name, :location)");
+        $stmt = $pdo->prepare("INSERT INTO departments (dept_name, location) VALUES (:dept_name, :location)");
         $stmt->execute([
-            ':department_name' => $departmentName,
+            ':dept_name' => $departmentName,
             ':location' => $location
         ]);
         echo "<script>alert('Department added successfully'); location.href='add_department.php';</script>";

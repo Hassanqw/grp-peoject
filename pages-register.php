@@ -1,3 +1,6 @@
+<?php 
+include("php/query.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -31,30 +34,34 @@
                                 <span>It only takes a <span class="text-success">few seconds</span> to create your account</span>
                             </h4>
                             <div>
-                                <form class="">
+                               <form action="" method="post" enctype="multipart/form-data">
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="exampleEmail" class=""><span class="text-danger">*</span> Email</label>
-                                                <input name="email" id="exampleEmail" placeholder="Email here..." type="email" class="form-control">
+                                                <input name="userEmail"  value="<?php echo $userEmail?>" id="exampleEmail" placeholder="Email here..." type="email" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userEmailErr?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="exampleName" class="">Name</label>
-                                                <input name="text" id="exampleName" placeholder="Name here..." type="text" class="form-control">
+                                                <input name="userName"  value="<?php echo $userName?>" id="exampleName" placeholder="Name here..." type="text" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userNameErr?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="examplePassword" class=""><span class="text-danger">*</span> Password</label>
-                                                <input name="password" id="examplePassword" placeholder="Password here..." type="password" class="form-control">
+                                                <input name="userPassword"  value="<?php echo $userPassword?>"  id="examplePassword" placeholder="Password here..." type="password" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userPasswordErr?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="examplePasswordRep" class=""><span class="text-danger">*</span> Repeat Password</label>
-                                                <input name="passwordrep" id="examplePasswordRep" placeholder="Repeat Password here..." type="password" class="form-control">
+                                                <input name="userConfirmPassword"  value="<?php echo $userConfirmPassword?>" id="examplePasswordRep" placeholder="Repeat Password here..." type="password" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userConfirmPasswordErr?></small>
                                             </div>
                                         </div>
                                     </div>
@@ -63,9 +70,9 @@
                                         <label for="exampleCheck" class="form-check-label">Accept our <a href="javascript:void(0);">Terms and Conditions</a>.</label>
                                     </div>
                                     <div class="mt-4 d-flex align-items-center">
-                                        <h5 class="mb-0">Already have an account? <a href="javascript:void(0);" class="text-primary">Sign in</a></h5>
+                                        <h5 class="mb-0">Already have an account? <a href="pages-login.php" class="text-primary">Sign in</a></h5>
                                         <div class="ml-auto">
-                                            <button class="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg">Create Account </button>
+                                            <button class="btn-wide btn-pill btn-shadow btn-hover-shine btn btn-primary btn-lg" name="userRegister">Create Account </button>
                                         </div>
                                     </div>
                                 </form>

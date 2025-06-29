@@ -1,3 +1,6 @@
+<?php 
+include("php/query.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -67,21 +70,24 @@
                                 <span class="d-block">Welcome back,</span>
                                 <span>Please sign in to your account.</span>
                             </h4>
-                            <h6 class="mt-3">No account? <a href="javascript:void(0);" class="text-primary">Sign up now</a></h6>
+                            <h6 class="mt-3">No account? <a href="pages-register.php" class="text-primary">Sign up now</a></h6>
                             <div class="divider row"></div>
                             <div>
-                                <form class="">
+                                                               <form action="" method="post" enctype="multipart/form-data">
+
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="exampleEmail" class="">Email</label>
-                                                <input name="email" id="exampleEmail" placeholder="Email here..." type="email" class="form-control">
+                                                <input name="userEmail"  value="<?php echo $userEmail?>"  id="exampleEmail" placeholder="Email here..." type="email" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userEmailErr?></small>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="position-relative form-group">
                                                 <label for="examplePassword" class="">Password</label>
-                                                <input name="password" id="examplePassword" placeholder="Password here..." type="password" class="form-control">
+                                                <input name="userPassword"  value="<?php echo $userPassword?>" id="examplePassword" placeholder="Password here..." type="password" class="form-control">
+                                                <small id="helpId" class="text-danger"><?php echo $userPasswordErr?></small>
                                             </div>
                                         </div>
                                     </div>
@@ -93,7 +99,7 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-auto">
                                             <a href="javascript:void(0);" class="btn-lg btn btn-link">Recover Password</a>
-                                            <button class="btn btn-primary btn-lg">Login to Dashboard</button>
+                                            <button class="btn btn-primary btn-lg" name="userLogin">Login to Dashboard</button>
                                         </div>
                                     </div>
                                 </form>
